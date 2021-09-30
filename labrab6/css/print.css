@@ -1,0 +1,52 @@
+/* Стили для печати */
+
+@media print {
+    @page {
+        size: A4;
+        margin: 1cm;
+    }
+    body {
+        font-size: 28px;
+        background-color: #fff;
+    }
+    body img,
+    .works-item img,
+    .team-item img,
+    .reviews-images img {
+        display: none;
+    }
+    header {
+        background: none;
+    }
+    a.button.promo-button,
+    .more,
+    reviews button,
+    .form-wrap {
+        display: none;
+    }
+    *,
+    *::before,
+    *::after {
+        background: #fff !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    /* img {
+        page-break-inside: avoid;
+    } */
+    body > *:not(main) {
+        display: none;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
+    article {
+        column-width: 17em;
+        column-gap: 3em;
+    }
+}
